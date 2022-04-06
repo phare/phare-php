@@ -6,7 +6,6 @@ use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Phare\PharePHP\Token;
 use PHPUnit\Framework\TestCase;
-use InvalidArgumentException;
 
 class TokenTest extends TestCase
 {
