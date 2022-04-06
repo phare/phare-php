@@ -1,0 +1,47 @@
+{
+    "name": "phare/phare-php",
+    "description": "PHP integration for the Phare user testing platform",
+    "keywords": [
+        "phare",
+        "pharephp"
+    ],
+    "homepage": "https://github.com/phare/phare-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nicolas Beauvais",
+            "email": "nicolas@phare.app",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "firebase/php-jwt": "^6.1"
+    },
+    "require-dev": {
+        "ext-dom": "*",
+        "roave/security-advisories": "dev-latest",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Phare\\PharePHP\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Phare\\PharePHP\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
