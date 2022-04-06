@@ -6,11 +6,15 @@ class Script
 {
     public const ENDPOINT = 'https://cdn.phare.app/script.js';
 
-    public function build(string $token): string
+    public function build(string $token, string $nonce = null): string
     {
         $endpoint = self::ENDPOINT;
 
-        return "<script src=\"$endpoint\" data-token=\"$token\" defer></script>";
+        if ($nonce) {
+            $nonce = "nonce=\"$nonce\"";
+        }
+
+        return "<script src=\"$endpoint\" data-token=\"$token\" $nonce defer></script>";
     }
 
     public static function make(
@@ -18,11 +22,13 @@ class Script
         string $secretKey,
         string $salt,
         string|int $identifier,
+        string $nonce = null
     ): string {
         $token = new Token($publicKey, $secretKey, $salt);
 
         return (new self())->build(
-            $token->create($identifier)
+            $token->create($identifier),
+            $nonce
         );
     }
 }

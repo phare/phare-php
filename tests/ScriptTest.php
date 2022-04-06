@@ -44,6 +44,30 @@ class ScriptTest extends TestCase
         $this->assertEquals($token, $scriptNode->getAttribute('data-token'));
         $this->assertEquals(Script::ENDPOINT, $scriptNode->getAttribute('src'));
         $this->assertTrue($scriptNode->hasAttribute('defer'));
+        $this->assertFalse($scriptNode->hasAttribute('nonce'));
+    }
+
+    public function test_it_can_build_script_with_nonce(): void
+    {
+        $token = $this->randomString();
+        $nonce = $this->randomString();
+
+        $script = (new Script())->build($token, $nonce);
+
+        $document = new DomDocument();
+
+        $document->loadHTML($script);
+
+        $xpath = new DOMXPath($document);
+
+        /** @var \DOMElement $scriptNode */
+        $scriptNode = $xpath->query('//script')[0];
+
+        $this->assertEquals($token, $scriptNode->getAttribute('data-token'));
+        $this->assertEquals(Script::ENDPOINT, $scriptNode->getAttribute('src'));
+        $this->assertEquals($nonce, $scriptNode->getAttribute('nonce'));
+        $this->assertTrue($scriptNode->hasAttribute('defer'));
+
     }
 
     public function test_it_can_build_script_with_make_static_function(): void
@@ -53,6 +77,7 @@ class ScriptTest extends TestCase
         $script = Script::make(
             $this->randomString(),
             $secret,
+            $this->randomString(),
             $this->randomString(),
             $this->randomString()
         );
@@ -68,6 +93,7 @@ class ScriptTest extends TestCase
 
         $this->assertEquals(Script::ENDPOINT, $scriptNode->getAttribute('src'));
         $this->assertTrue($scriptNode->hasAttribute('defer'));
+        $this->assertTrue($scriptNode->hasAttribute('nonce'));
 
         $token = $scriptNode->getAttribute('data-token');
 
