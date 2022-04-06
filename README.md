@@ -8,7 +8,7 @@ Integrate the [Phare privacy first, in-app user testing platform](https://phare.
 
 ### Using Laravel?
 
-Check out teh [Phare Laravel](https://github.com/phare/phare-laravel) package.
+Check out the [Phare Laravel](https://github.com/phare/phare-laravel) package.
 
 ## Installation
 
