@@ -10,9 +10,9 @@ class Token
 
     public const AUDIENCE = 'https://phare.app';
 
-    public const EXPIRATION = 60;
+    public const EXPIRATION = 300;
 
-    public const LEEWAY = 60;
+    public const LEEWAY = 10;
 
     public function __construct(
         private string $publicKey,
