@@ -67,7 +67,6 @@ class ScriptTest extends TestCase
         $this->assertEquals(Script::ENDPOINT, $scriptNode->getAttribute('src'));
         $this->assertEquals($nonce, $scriptNode->getAttribute('nonce'));
         $this->assertTrue($scriptNode->hasAttribute('defer'));
-
     }
 
     public function test_it_can_build_script_with_make_static_function(): void
