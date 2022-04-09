@@ -24,10 +24,10 @@ You need to things to make Phare work on your application:
 - a unique user Token that need to be generated in your backend, to maintain user privacy.
 - load the Phare script in your HTML
 
-This package aim to make that process easier by providing you with a method capable of doing both things at once: 
+This package aim to make that process easier by providing you with a method capable of doing both things at once:
 
 ```php
-$script = \Phare\PharePHP\Script::make(
+$script = \Phare\PharePHP\Script::render(
     'your-public-key',
     'your-private-key',
     'a-random-string-of-your-choice',

@@ -73,7 +73,7 @@ class ScriptTest extends TestCase
     {
         $secret = $this->randomString();
 
-        $script = Script::make(
+        $script = Script::render(
             $this->randomString(),
             $secret,
             $this->randomString(),

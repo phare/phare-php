@@ -17,7 +17,7 @@ class Script
         return "<script src=\"$endpoint\" data-token=\"$token\" $nonce defer></script>";
     }
 
-    public static function make(
+    public static function render(
         string $publicKey,
         string $secretKey,
         string $salt,
