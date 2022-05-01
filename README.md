@@ -4,7 +4,7 @@
 [![Tests](https://github.com/phare/phare-php/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/phare/phare-php/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/phare/phare-php.svg?style=flat-square)](https://packagist.org/packages/phare/phare-php)
 
-Integrate the [Phare privacy first, in-app user testing platform](https://phare.app/) into your PHP applications.
+Integrate the [Phare privacy first, in-app user testing platform](https://pharehq.com/) into your PHP applications.
 
 ### Using Laravel?
 

@@ -8,7 +8,7 @@ class Token
 {
     public const ALGORITHM = 'HS256';
 
-    public const AUDIENCE = 'https://phare.app';
+    public const AUDIENCE = 'https://pharehq.com';
 
     public const EXPIRATION = 300;
 

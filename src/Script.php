@@ -4,7 +4,7 @@ namespace Phare\PharePHP;
 
 class Script
 {
-    public const ENDPOINT = 'https://cdn.phare.app/script.js';
+    public const ENDPOINT = 'https://cdn.pharehq.com/script.js';
 
     public function build(string $token, string $nonce = null): string
     {
